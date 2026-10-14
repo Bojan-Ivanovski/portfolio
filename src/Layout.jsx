@@ -1,3 +1,5 @@
+import Seo from "./Seo";
+import { normalizePath } from "./data/seo";
 import { useEffect, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
@@ -9,13 +11,14 @@ const sections = [
   ["contact", "Contact"],
 ];
 
-const pageRoutes = { about: "/MoreAboutMe", projects: "/Projects" };
+const pageRoutes = { about: "/MoreAboutMe/", projects: "/Projects/" };
 
 export default function Layout() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [dark, setDark] = useState(() => {
+    if (typeof window === "undefined") return false;
     try {
       const saved = localStorage.getItem("darkMode");
       return saved === null
@@ -75,6 +78,7 @@ export default function Layout() {
   }
   return (
     <>
+      <Seo />
       <a
         className="skip-link"
         href="#main-content"
@@ -106,7 +110,8 @@ export default function Layout() {
                 }}
                 aria-current={
                   pageRoutes[id]
-                    ? location.pathname === pageRoutes[id]
+                    ? normalizePath(location.pathname) ===
+                      normalizePath(pageRoutes[id])
                       ? "page"
                       : undefined
                     : location.pathname === "/" && active === id
@@ -146,7 +151,7 @@ export default function Layout() {
           {sections.map(([id, label]) => (
             <a
               key={id}
-              href={`#/?section=${id}`}
+              href={`#${id}`}
               onClick={(event) => navigate(event, id)}
               className={active === id ? "active" : ""}
               aria-label={label}

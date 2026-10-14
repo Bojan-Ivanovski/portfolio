@@ -82,7 +82,7 @@ export default function SubpageLayout() {
           ].map(([id, label]) => (
             <a
               key={id}
-              href={`#/MoreAboutMe?section=${id}`}
+              href={`#${id}`}
               onClick={(event) => {
                 event.preventDefault();
                 document.getElementById(id)?.scrollIntoView({
@@ -214,7 +214,7 @@ export default function SubpageLayout() {
               </article>
             ))}
           </div>
-          <Link className="text-link profile-catalog-link" to="/Projects">
+          <Link className="text-link profile-catalog-link" to="/Projects/">
             Explore my current projects <ArrowUpRight size={17} />
           </Link>
         </section>

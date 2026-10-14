@@ -21,7 +21,7 @@ export default function Projects() {
             </h2>
             <p>A selection of things I’ve been building and exploring.</p>
           </div>
-          <Link className="text-link" to="/Projects">
+          <Link className="text-link" to="/Projects/">
             All projects <ArrowUpRight size={18} />
           </Link>
         </div>

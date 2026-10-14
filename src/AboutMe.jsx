@@ -47,7 +47,7 @@ export default function AboutMe() {
               across frontend and backend systems, with projects that explore
               everything from web applications to machine learning.
             </p>
-            <Link className="text-link" to="/MoreAboutMe">
+            <Link className="text-link" to="/MoreAboutMe/">
               A little more about me <ArrowUpRight size={18} />
             </Link>
           </div>

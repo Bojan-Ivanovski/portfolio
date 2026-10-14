@@ -8,7 +8,7 @@ export default function Home() {
       <Background variant={2} />
       <div className="container hero-content">
         <p className="eyebrow">
-          <span className="small-line" /> Developer · Computer engineering
+          <span className="small-line" /> AI Engineer · Software developer
         </p>
         <h1>
           Bojan{" "}
@@ -22,12 +22,12 @@ export default function Home() {
           Ideas into things that work.
         </p>
         <p className="hero-detail">
-          Exploring the space between software, intelligent systems, and the
-          hardware underneath.
+          Building AI products, automation integrations, and developer tools,
+          with a foundation in computer engineering.
         </p>
         <div className="button-row">
           <a
-            href="#/?section=projects"
+            href="#projects"
             className="button primary"
             onClick={(event) => {
               event.preventDefault();
@@ -64,7 +64,7 @@ export default function Home() {
       <div className="hero-bottom container">
         <span>Software / Systems / Exploration</span>
         <a
-          href="#/?section=about"
+          href="#about"
           onClick={(event) => {
             event.preventDefault();
             document.getElementById("about").scrollIntoView({
