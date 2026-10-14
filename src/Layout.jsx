@@ -9,6 +9,8 @@ const sections = [
   ["contact", "Contact"],
 ];
 
+const pageRoutes = { about: "/MoreAboutMe", projects: "/Projects" };
+
 export default function Layout() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -97,12 +99,19 @@ export default function Layout() {
             {sections.map(([id, label]) => (
               <Link
                 key={id}
-                to={`/?section=${id}`}
-                onClick={(event) => navigate(event, id)}
+                to={pageRoutes[id] || `/?section=${id}`}
+                onClick={(event) => {
+                  if (pageRoutes[id]) setMenuOpen(false);
+                  else navigate(event, id);
+                }}
                 aria-current={
-                  location.pathname === "/" && active === id
-                    ? "location"
-                    : undefined
+                  pageRoutes[id]
+                    ? location.pathname === pageRoutes[id]
+                      ? "page"
+                      : undefined
+                    : location.pathname === "/" && active === id
+                      ? "location"
+                      : undefined
                 }
               >
                 {label}
