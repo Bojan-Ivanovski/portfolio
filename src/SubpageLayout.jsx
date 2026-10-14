@@ -148,7 +148,9 @@ export default function SubpageLayout() {
               <Code2 size={17} /> 02 — Technical skills
             </p>
             <h2 id="skills-title">Across the stack. Into the details.</h2>
-            <p>The technologies and practices I bring to my work.</p>
+            <p>
+              Technologies, tools, and engineering practices I’m familiar with.
+            </p>
           </div>
           <div className="profile-skills-grid">
             {skillGroups.map((group) => (
