@@ -19,7 +19,7 @@ npm run build
 npm run preview
 ```
 
-The application is configured for `/portfolio/` on GitHub Pages. Legacy hash routes `#/Projects` and `#/MoreAboutMe` are preserved.
+The application is configured for `/portfolio/` on GitHub Pages. About and Projects are prerendered at `/portfolio/MoreAboutMe/` and `/portfolio/Projects/`. Legacy hash bookmarks redirect to these URLs.
 
 ## GitHub project catalog
 
@@ -42,3 +42,16 @@ In repository **Settings → Pages → Build and deployment**, choose **GitHub A
 ## Contact
 
 The contact form retains the original Formspree endpoint. Browser validation checks required fields and email format; Formspree handles delivery and its confirmation page. Direct email and social links remain available. The unused CV download was removed because no CV file was present.
+
+## Search and social metadata
+
+`npm run build` creates the client bundle, renders each page to static HTML with React, and checks the generated SEO output. GitHub Pages can serve every page directly without an SPA fallback. The browser then enables navigation, project filters, and other interactions.
+
+- `src/data/seo.js` defines titles, descriptions, canonical URLs, and the production origin/base path. Keep it aligned with `vite.config.js` if hosting changes.
+- `src/data/structured-data.js` generates WebSite, Person, ProfilePage, CollectionPage, breadcrumbs, and a project ItemList. Personal skills and repository details come from the same data as the visible pages.
+- Open Graph and Twitter Card metadata use the checked-in 1200 × 630 `public/social-card.png`; its editable vector source is `public/social-card.svg`.
+- `dist/sitemap.xml` lists the three canonical pages. Query strings, fragments, and the 404 page are excluded. No artificial modification dates are emitted.
+- `dist/404.html` has `noindex, follow` and is served by GitHub Pages for missing paths.
+- `dist/robots.txt` is generated for portable hosting. Crawlers read robots.txt at the **origin root**; `/portfolio/robots.txt` cannot set rules for `bojan-ivanovski.github.io`. The site uses indexable page metadata regardless. If you control the user-site repository, add a sitemap directive to its root robots.txt as well.
+
+After deployment, submit `https://bojan-ivanovski.github.io/portfolio/sitemap.xml` in Google Search Console and Bing Webmaster Tools. Site verification requires the owner's account; no verification tokens, analytics IDs, ratings, or search-ranking claims are fabricated.
