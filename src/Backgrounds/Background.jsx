@@ -1,15 +1,12 @@
-import React from "react"
-
-export default function Background(props)
-{
-    return (
-        <div className={props.Background + " bg-white " + props.class}>
-            <canvas data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="100" data-aos-easing="ease-out-back"></canvas>
-            <canvas data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="500" data-aos-easing="ease-out-back"></canvas>
-            <canvas data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="700" data-aos-easing="ease-out-back"></canvas>
-            <canvas data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200" data-aos-easing="ease-out-back"></canvas>
-            <canvas data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400" data-aos-easing="ease-out-back"></canvas>
-            <canvas data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200" data-aos-easing="ease-out-back"></canvas>
-        </div>
-    )
+export default function Background({ variant = 1 }) {
+  return (
+    <div
+      className={`geometric-background variant-${variant}`}
+      aria-hidden="true"
+    >
+      {Array.from({ length: 6 }, (_, index) => (
+        <span key={index} />
+      ))}
+    </div>
+  );
 }

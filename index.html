@@ -1,14 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="icon" href="/Favicon/favicon.ico" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <title>Portfolio - Bojan Ivanovski</title>
+    <meta
+      name="description"
+      content="Bojan Ivanovski’s portfolio: software development, computer engineering, intelligent systems, and projects built with curiosity."
+    />
+    <meta name="theme-color" content="#146c94" />
+    <meta
+      property="og:title"
+      content="Bojan Ivanovski — Developer & Computer Engineering"
+    />
+    <meta
+      property="og:description"
+      content="Explore my software, engineering, and research projects. Curiosity into code. Ideas into things that work."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%BASE_URL%Favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      href="%BASE_URL%Favicon/apple-touch-icon.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Bojan Ivanovski — Developer & Computer Engineering</title>
+    <script>
+      try {
+        const saved = localStorage.getItem("darkMode");
+        document.documentElement.dataset.theme = (
+          saved === null
+            ? matchMedia("(prefers-color-scheme: dark)").matches
+            : saved === "true"
+        )
+          ? "dark"
+          : "light";
+      } catch {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
