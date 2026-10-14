@@ -931,26 +931,6 @@ img {
 .empty-state p {
   margin: 15px 0 25px;
 }
-.about-detail {
-  max-width: 850px;
-}
-.about-detail > .lead {
-  margin: 30px 0 40px;
-}
-.about-detail article {
-  padding: 30px 0;
-  border-top: 1px solid var(--line);
-}
-.about-detail article h2 {
-  font-size: 1.35rem;
-  margin-bottom: 18px;
-}
-.about-detail article p {
-  color: var(--muted);
-}
-.about-detail > .button {
-  margin-top: 20px;
-}
 @media (min-width: 1600px) {
   .hero {
     min-height: 850px;
