@@ -1,11 +1,36 @@
-// Professional details transcribed and summarized from Bojan's supplied CV.
+// Professional details summarized from Bojan's CV and career updates.
 export const experience = [
+  {
+    role: "AI Engineer",
+    company: "Stonebranch",
+    start: "2026-02",
+    startLabel: "Feb 2026",
+    endLabel: "Present",
+    focus: "AI products, agent tooling & organizational adoption",
+    summary:
+      "Developing AI products and internal solutions that support Stonebranch’s adoption of AI, with a focus on practical applications for the Universal Automation Center (UAC).",
+    highlights: [
+      "Develop the AI Integration Builder, a curated Claude Code plugin combining custom skills, scripts, hooks, agents, and evaluations to support integration development.",
+      "Design and integrate custom AI solutions and guardrails for projects across the organization, aligning capabilities with project requirements.",
+      "Shape new AI products and capabilities for use within UAC, from exploration and prototyping to defining practical integration approaches.",
+      "Work with LangChain, LangGraph, and Pydantic AI, and evaluate agent harness capabilities for building and orchestrating AI workflows.",
+    ],
+    technologies: [
+      "Claude Code",
+      "LangChain",
+      "LangGraph",
+      "Pydantic AI",
+      "Agent harnesses",
+      "AI evaluations",
+    ],
+  },
   {
     role: "Software Engineer",
     company: "Stonebranch",
     start: "2025-02",
     startLabel: "Feb 2025",
-    endLabel: "Present",
+    end: "2026-02",
+    endLabel: "Feb 2026",
     focus: "Integrations, automation & developer tooling",
     summary:
       "Building integrations and the tools that make them easier to develop, while helping shape new capabilities for the Stonebranch Automation Platform (UAC).",

@@ -51,18 +51,19 @@ export default function SubpageLayout() {
             Engineering connections<span className="accent-dot">.</span>
           </h1>
           <p className="lead">
-            I’m Bojan Ivanovski—a software engineer connecting systems, building
+            I’m Bojan Ivanovski—an AI engineer connecting systems, building
             useful tools, and staying curious about what comes next.
           </p>
           <p className="profile-intro-detail">
-            At Stonebranch, I work on integrations for the Universal Automation
-            Center, developer tooling, and new opportunities in automation,
-            including AI-driven capabilities. My path here runs through frontend
-            development, IT infrastructure, and computer engineering.
+            At Stonebranch, I develop AI products, agent tooling, and custom
+            solutions with guardrails for projects across the organization,
+            including new capabilities for the Universal Automation Center
+            (UAC). My path here runs through frontend development, IT
+            infrastructure, and computer engineering.
           </p>
           <div className="profile-facts">
             <span>
-              <BriefcaseBusiness size={16} /> Software Engineer · Stonebranch
+              <BriefcaseBusiness size={16} /> AI Engineer · Stonebranch
             </span>
             <span>
               <MapPin size={16} /> Skopje, North Macedonia
