@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Bojan Ivanovski — AI Engineer</title>
+  <desc id="description">AI products, integrations, and developer tooling. Portfolio of Bojan Ivanovski, based in Skopje, North Macedonia.</desc>
+  <rect width="1200" height="630" fill="#f6f1f1"/>
+  <g fill="#d6dce0" opacity=".5"><path d="M0 0h330v350H0z"/><path d="M240 90h300v190H240z"/><path d="M180 230h280v250H180z"/></g>
+  <path d="M1020 420h180v170h-180z" fill="#afd3e2" opacity=".55"/>
+  <path d="M940 335h150v190H940z" fill="#d6dce0" opacity=".55"/>
+  <path d="M80 128h45" stroke="#086e90" stroke-width="3"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="145" y="135" font-size="19" letter-spacing="4" fill="#086e90">AI ENGINEER · SOFTWARE DEVELOPER</text>
+    <text x="76" y="285" font-size="82" font-weight="600" letter-spacing="-3" fill="#146c94">Bojan Ivanovski.</text>
+    <text x="80" y="365" font-size="31" fill="#245268">AI products, integrations &amp; developer tooling.</text>
+    <text x="80" y="415" font-size="24" fill="#496675">Curiosity into code. Ideas into things that work.</text>
+    <text x="80" y="555" font-size="19" fill="#496675">bojan-ivanovski.github.io/portfolio</text>
+    <text x="1120" y="555" font-size="18" fill="#496675" text-anchor="end">Skopje, North Macedonia</text>
+  </g>
+</svg>

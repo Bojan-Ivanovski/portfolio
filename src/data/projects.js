@@ -1,4 +1,4 @@
-import snapshot from "./github.json";
+import snapshot from "./github.json" with { type: "json" };
 
 const presentation = {
   tixyo: { title: "Tixyo", category: "Applications" },
