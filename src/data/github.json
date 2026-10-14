@@ -1,0 +1,230 @@
+{
+  "username": "Bojan-Ivanovski",
+  "syncedAt": "2026-10-14T20:15:36.868Z",
+  "projects": [
+    {
+      "name": "portfolio",
+      "description": "Personal portfolio showcasing Bojan Ivanovski's projects and computer engineering work, built with React, Vite, and Tailwind CSS.",
+      "url": "https://github.com/Bojan-Ivanovski/portfolio",
+      "homepage": "https://bojan-ivanovski.github.io/portfolio/",
+      "language": "JavaScript",
+      "topics": [
+        "github-pages",
+        "personal-website",
+        "portfolio",
+        "react",
+        "tailwindcss",
+        "vite"
+      ],
+      "stars": 0,
+      "updatedAt": "2024-07-19T15:02:13Z"
+    },
+    {
+      "name": "nvim-config",
+      "description": "Personal Neovim configuration built on LazyVim, with Lua-based settings, plugins, and key mappings.",
+      "url": "https://github.com/Bojan-Ivanovski/nvim-config",
+      "homepage": null,
+      "language": "Lua",
+      "topics": ["dotfiles", "lazyvim", "lua", "neovim", "neovim-config"],
+      "stars": 0,
+      "updatedAt": "2026-07-14T00:00:54Z"
+    },
+    {
+      "name": "lift-go-mk",
+      "description": "Promotional website for LiftGoMK — furniture lift and moving services in Skopje.",
+      "url": "https://github.com/Bojan-Ivanovski/lift-go-mk",
+      "homepage": "https://bojan-ivanovski.github.io/lift-go-mk/",
+      "language": "CSS",
+      "topics": [
+        "astro",
+        "github-pages",
+        "small-business",
+        "static-site",
+        "tailwindcss",
+        "typescript"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-10-13T16:14:31Z"
+    },
+    {
+      "name": "heral-metal",
+      "description": "Bilingual Macedonian/English website for Heral Metal's metal fabrication and industrial services, built with Astro and Tailwind CSS.",
+      "url": "https://github.com/Bojan-Ivanovski/heral-metal",
+      "homepage": "https://bojan-ivanovski.github.io/heral-metal/",
+      "language": "JavaScript",
+      "topics": [
+        "astro",
+        "github-pages",
+        "multilingual",
+        "static-site",
+        "tailwindcss",
+        "typescript"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-10-12T23:27:11Z"
+    },
+    {
+      "name": "finki-totp",
+      "description": "Full-stack TOTP authenticator with Google OAuth, encrypted secret storage, and Docker/Kubernetes deployment using FastAPI and React.",
+      "url": "https://github.com/Bojan-Ivanovski/finki-totp",
+      "homepage": null,
+      "language": "TypeScript",
+      "topics": [
+        "docker",
+        "fastapi",
+        "github-actions",
+        "kubernetes",
+        "oauth2",
+        "postgresql",
+        "react",
+        "totp",
+        "two-factor-authentication"
+      ],
+      "stars": 0,
+      "updatedAt": "2025-06-30T22:52:05Z"
+    },
+    {
+      "name": "finki-snake-tree-search",
+      "description": "Unity Snake game with manual and AI control, visualizing BFS, DFS, uniform-cost, greedy, and A* search algorithms.",
+      "url": "https://github.com/Bojan-Ivanovski/finki-snake-tree-search",
+      "homepage": null,
+      "language": "ASP.NET",
+      "topics": [
+        "artificial-intelligence",
+        "csharp",
+        "pathfinding",
+        "search-algorithms",
+        "snake-game",
+        "unity"
+      ],
+      "stars": 0,
+      "updatedAt": "2024-07-07T20:48:57Z"
+    },
+    {
+      "name": "finki-open-tslm",
+      "description": "SmartHeart: an OpenTSLM training and evaluation pipeline for EEG-based ADHD classification research, with patient-level splits and LoRA fine-tuning.",
+      "url": "https://github.com/Bojan-Ivanovski/finki-open-tslm",
+      "homepage": null,
+      "language": "Jupyter Notebook",
+      "topics": [
+        "adhd",
+        "eeg",
+        "lora",
+        "machine-learning",
+        "opentslm",
+        "python",
+        "time-series"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-09-08T21:49:53Z"
+    },
+    {
+      "name": "finki-nerf",
+      "description": "Neural Radiance Fields (NeRF) implementation in TensorFlow for novel-view synthesis, developed as FINKI coursework.",
+      "url": "https://github.com/Bojan-Ivanovski/finki-nerf",
+      "homepage": null,
+      "language": "Python",
+      "topics": [
+        "computer-vision",
+        "nerf",
+        "neural-radiance-fields",
+        "novel-view-synthesis",
+        "python",
+        "tensorflow"
+      ],
+      "stars": 0,
+      "updatedAt": "2025-09-17T23:42:24Z"
+    },
+    {
+      "name": "trader-lens-tslm",
+      "description": "Training architecture for reproducible market-analysis models used in Trader Lens backtesting and current-market research.",
+      "url": "https://github.com/Bojan-Ivanovski/trader-lens-tslm",
+      "homepage": null,
+      "language": null,
+      "topics": [
+        "machine-learning",
+        "market-analysis",
+        "model-training",
+        "quantitative-finance",
+        "time-series",
+        "trader-lens"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-09-22T18:29:27Z"
+    },
+    {
+      "name": "tixyo",
+      "description": "Confidence-gated, model-assisted issue triage for engineering teams.",
+      "url": "https://github.com/Bojan-Ivanovski/tixyo",
+      "homepage": "https://tixyo.dev/",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "developer-tools",
+        "github",
+        "github-automation",
+        "issue-triage",
+        "llm",
+        "local-ai",
+        "local-first",
+        "local-llm",
+        "machine-learning",
+        "python",
+        "ticket-classification"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-10-03T12:11:31Z"
+    },
+    {
+      "name": "tbt-engine",
+      "description": "A standalone, reusable backtesting engine for deterministic evaluation of conventional and model-assisted trading strategies.",
+      "url": "https://github.com/Bojan-Ivanovski/tbt-engine",
+      "homepage": null,
+      "language": "Python",
+      "topics": [
+        "algorithmic-trading",
+        "backtesting",
+        "portfolio-simulation",
+        "python",
+        "quantitative-finance",
+        "trading-strategies"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-09-30T20:32:07Z"
+    },
+    {
+      "name": "trader-lens-backend",
+      "description": "API and orchestration layer for Trader Lens, connecting market data, research workflows, backtests, and model inference.",
+      "url": "https://github.com/Bojan-Ivanovski/trader-lens-backend",
+      "homepage": null,
+      "language": null,
+      "topics": [
+        "api",
+        "backtesting",
+        "market-data",
+        "model-inference",
+        "quantitative-finance",
+        "trader-lens"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-09-21T21:32:56Z"
+    },
+    {
+      "name": "trader-lens-frontend",
+      "description": "Trader Lens frontend—the central hub for quantitative research, strategy backtesting, and model-assisted market analysis.",
+      "url": "https://github.com/Bojan-Ivanovski/trader-lens-frontend",
+      "homepage": null,
+      "language": null,
+      "topics": [
+        "backtesting",
+        "market-analysis",
+        "quantitative-finance",
+        "quantitative-research",
+        "trader-lens",
+        "trading-strategies"
+      ],
+      "stars": 0,
+      "updatedAt": "2026-09-21T21:33:12Z"
+    }
+  ]
+}
