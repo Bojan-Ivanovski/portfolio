@@ -1,30 +1,86 @@
-import React, { useState } from "react";
+import { Github, Linkedin } from "./BrandIcons";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Background from "./Backgrounds/Background";
 
-import  Background  from "./Backgrounds/Background";
-
-export default function Home(props)
-{
-    const [hovered, setHovered] = useState(false);
-    const height = document.querySelector('body').scrollHeight
-
-    return(
-        <>
-        <Background Background="Background2"></Background>
-        <div className="w-full h-full flex justify-center items-center">
-            <canvas className={`absolute  ${hovered ? "w-full h-full rounded-0" : "w-0 h-0 rounded-full" } transition-all duration-[1s]  backdrop-invert z-[100]`}></canvas>
-            <div onClick={() => {props.setMode(val => !val); setHovered(false); localStorage.setItem("darkMode",!(localStorage.getItem("darkMode") === "true"))}} onMouseEnter={()=> setHovered(true)} onMouseLeave={()=> setHovered(false)} className="z-[101] absolute w-full h-32 text-4xl opacity-0 cursor-pointer">Bojan Ivanovski</div>
-            
-            
-            <div className="flex flex-col items-center">
-                <p className="text-2xl">Hover or Click Me</p>
-                <span className="material-symbols-outlined rotate-180">keyboard_arrow_up</span>
-                <h1 className="text-4xl  text-center  lg:text-6xl xl:text-8xl text-body" data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-out-back" data-aos-delay="300">Bojan Ivanovski</h1>
-            
-                <p onClick={() => window.scrollTo(0, height/3)} className="text-2xl mt-10 cursor-pointer">Scroll down</p>
-                <span onClick={() => window.scrollTo(0, height/3)} className="material-symbols-outlined rotate-180 cursor-pointer">keyboard_arrow_up</span>
-            </div>
-            
+export default function Home() {
+  return (
+    <section id="home" className="hero section">
+      <Background variant={2} />
+      <div className="container hero-content">
+        <p className="eyebrow">
+          <span className="small-line" /> Developer · Computer engineering
+        </p>
+        <h1>
+          Bojan{" "}
+          <span>
+            Ivanovski<span className="accent-dot">.</span>
+          </span>
+        </h1>
+        <p className="hero-description">
+          Curiosity into code.
+          <br />
+          Ideas into things that work.
+        </p>
+        <p className="hero-detail">
+          Exploring the space between software, intelligent systems, and the
+          hardware underneath.
+        </p>
+        <div className="button-row">
+          <a
+            href="#/?section=projects"
+            className="button primary"
+            onClick={(event) => {
+              event.preventDefault();
+              document.getElementById("projects").scrollIntoView({
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                  .matches
+                  ? "instant"
+                  : "smooth",
+              });
+            }}
+          >
+            Explore my work <ArrowUpRight size={18} />
+          </a>
+          <a
+            href="https://github.com/Bojan-Ivanovski"
+            className="social-link"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub profile"
+          >
+            <Github size={21} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/bojan-ivanovski-aa9a34271"
+            className="social-link"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <Linkedin size={21} />
+          </a>
         </div>
-        </>
-    )
+      </div>
+      <div className="hero-bottom container">
+        <span>Software / Systems / Exploration</span>
+        <a
+          href="#/?section=about"
+          onClick={(event) => {
+            event.preventDefault();
+            document.getElementById("about").scrollIntoView({
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                .matches
+                ? "instant"
+                : "smooth",
+            });
+          }}
+        >
+          Scroll to discover <ArrowDown size={17} />
+        </a>
+      </div>
+      <span className="section-number" aria-hidden="true">
+        01 / 04
+      </span>
+    </section>
+  );
 }

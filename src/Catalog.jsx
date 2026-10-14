@@ -1,81 +1,125 @@
-import React, { useEffect, useState } from "react";
-
-import github from "./Assets/github.png"
-import global from "./Assets/global.png"
+import { Github } from "./BrandIcons";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft, Search } from "lucide-react";
 import Background from "./Backgrounds/Background";
-const info = []
-export function Card(props)
-{
-    return(
-        <div className="bg-white flex flex-col w-full swiper-slide" style={{boxShadow: "3px 3px 8px 2px #00000030"}} >
-            <div className="py-4 border-b-2 font-semibold">
-                <h1 className="px-8 line-clamp-1">{props.Title}</h1>
-            </div>
-            <p className="h-[250px] overflow-auto px-8 py-4">{props.Description}</p>
-            <div className="px-8 py-4 border-t-2 flex items-center gap-5">
-                {props.Link ? <a target="_blank" className="hover:opacity-50 transition-opacity duration-300" href={props.Link}><img src={global} alt="" width={32}/></a> : <></>}
-                <span className="flex-1"></span>
-                {props.GitLink ? <a target="_blank" className="hover:opacity-50 transition-opacity duration-300" href={props.GitLink}><img src={github} alt="" width={32}/></a> : <></>}
-            </div>
+import ProjectCard from "./ProjectCard";
+import { projects, syncedAt } from "./data/projects";
+
+const categories = [
+  "All",
+  ...new Set(projects.map((project) => project.category)),
+];
+export default function Catalog() {
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("All");
+  const [language, setLanguage] = useState("All");
+  const filtered = projects.filter(
+    (project) =>
+      (category === "All" || project.category === category) &&
+      (language === "All" || project.language === language) &&
+      `${project.title} ${project.description} ${project.language || ""} ${project.topics.join(" ")}`
+        .toLowerCase()
+        .includes(query.toLowerCase().trim()),
+  );
+  return (
+    <section className="section standalone">
+      <Background />
+      <div className="container">
+        <Link to="/?section=projects" className="text-link back-link">
+          <ArrowLeft size={17} /> Back to home
+        </Link>
+        <p className="eyebrow">The project catalog</p>
+        <div className="section-heading">
+          <div>
+            <h1>
+              Built. Tested. Explored<span className="accent-dot">.</span>
+            </h1>
+            <p>Applications, experiments, and everything in between.</p>
+          </div>
+          <a
+            href="https://github.com/Bojan-Ivanovski"
+            className="text-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Github size={18} /> GitHub profile
+          </a>
         </div>
-    )
-}
-
-export default function Catalog(props)
-{
-
-
-    if(localStorage.getItem("darkMode") === null)
-        localStorage.setItem("darkMode", false)
-    const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") === "true")
-
-    window.scrollTo(0,0);
-
-    const [Info, setInfo] = useState([])
-
-
-    document.body.style.overflow = "hidden";
-
-    useEffect(() => {
-        async function getInfo()
-        {
-            const response = await fetch("https://bojan-ivanovski.github.io/API-Repo/Projects.json")
-            const data = await response.json()            
-            
-            setInfo(data);
-        }
-        getInfo()
-    },[])
-
-
-    const load = Info.map((value, index) => <Card key={index} {...value}></Card>)
-    const url = window.location.href;
-    
-    return(
-        <>
-            
-        
-            <div className={`relative bg-white`}>
-                <div className={`fixed flex items-center w-full p-5 gap-10 z-20  ${darkMode ? "invert" : ""}`}>
-                    <a href={url.replace("#/Projects","")}><span className="material-symbols-outlined text-3xl text-body hover:text-secondary transition-all duration-300">start</span></a>
-                    <div style={{flex: 1}}></div>
-                    <a href={url.replace("#/Projects","")}><p className="text-3xl text-body SpecialFont hover:text-secondary transition-all duration-300">Bojan Ivanovski</p></a>
-                </div>
-                <div className={`w-full h-full z-0 fixed ${darkMode ? "invert" : ""} `}>
-                    <Background class={`fixed top-0`} Background="Background1"></Background>
-                
-                    <div className="w-full h-full flex justify-start items-start max-[320px]:px-8 px-12 sm:px-28 py-20 overflow-auto">
-                        <div className="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-10" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-out-back">
-                            {load}
-                        </div>
-                    </div>
-
-                    <h1 className="absolute bottom-0 left-3 text-[40px] text-body" >CATALOG</h1>
-                </div>
-            </div>
-        
-        
-        </>
-        
-    )
+        <div className="catalog-controls">
+          <label className="search-field">
+            <Search size={18} />
+            <span className="sr-only">Search projects</span>
+            <input
+              type="search"
+              placeholder="Search projects, technologies…"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          </label>
+          <label className="language-filter">
+            <span className="sr-only">Filter by language</span>
+            <select
+              value={language}
+              onChange={(event) => setLanguage(event.target.value)}
+            >
+              <option value="All">All languages</option>
+              {[
+                ...new Set(
+                  projects.map((project) => project.language).filter(Boolean),
+                ),
+              ]
+                .sort()
+                .map((value) => (
+                  <option key={value}>{value}</option>
+                ))}
+            </select>
+          </label>
+        </div>
+        <div className="filter-list" aria-label="Filter by category">
+          {categories.map((value) => (
+            <button
+              key={value}
+              className={value === category ? "filter active" : "filter"}
+              aria-pressed={value === category}
+              onClick={() => setCategory(value)}
+            >
+              {value}
+            </button>
+          ))}
+        </div>
+        <p className="catalog-count" role="status">
+          {filtered.length} {filtered.length === 1 ? "project" : "projects"} ·
+          Synced{" "}
+          {new Date(syncedAt).toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+            timeZone: "UTC",
+          })}
+        </p>
+        <div className="project-grid">
+          {filtered.map((project, index) => (
+            <ProjectCard key={project.name} project={project} index={index} />
+          ))}
+        </div>
+        {!filtered.length && (
+          <div className="empty-state">
+            <h2>No projects found</h2>
+            <p>Try another keyword or reset the filters.</p>
+            <button
+              className="button"
+              onClick={() => {
+                setQuery("");
+                setCategory("All");
+                setLanguage("All");
+              }}
+            >
+              Reset filters
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
 }

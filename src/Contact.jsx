@@ -1,75 +1,104 @@
-import React, { useState } from "react";
-import  Background  from "./Backgrounds/Background";
+import { Github, Linkedin } from "./BrandIcons";
+import { ArrowUpRight, Mail, Send } from "lucide-react";
+import Background from "./Backgrounds/Background";
 
-import github from "./Assets/github.png"
-import linkedin from "./Assets/linkedin.png"
-
-function Form()
-{
-    return <form className="flex flex-col gap-4" action="https://formspree.io/f/xrgwznlp" method="POST">
-        <h2 className="text-xl max-md:hidden">Reach me from this website</h2>
-        <input className="mt-2 px-4 py-3 text-lg w-full" style={{boxShadow: "3px 3px 8px 2px #00000030"}} placeholder="Name and Last name" name="Name" required></input>
-        <input className="mt-2 px-4 py-3 text-lg" style={{boxShadow: "3px 3px 8px 2px #00000030"}} placeholder="Email" name="Email" required></input>
-        <input className="mt-2 px-4 py-3 text-lg" style={{boxShadow: "3px 3px 8px 2px #00000030"}} placeholder="Subject" name="Subject" required></input>
-        <textarea rows={5} className="mt-2 px-4 py-3 text-lg resize-none" style={{boxShadow: "3px 3px 8px 2px #00000030"}} placeholder="Message" name="Message" required></textarea>
-        <button className="group relative mt-2 px-4 py-3 text-lg bg-[#ffffff]" style={{boxShadow: "3px 3px 8px 2px #00000030"}}>
-        <span className="absolute right-full transition-all opacity-0 group-hover:opacity-100 duration-300 group-hover:right-4 material-symbols-outlined">arrow_forward</span>
-            Send</button>
-    </form>
-}
-
-function Info()
-{
-    return <div className="flex flex-col gap-4">
-        <h2 className="text-xl max-md:hidden">Reach me personally</h2>
-        <div className="mt-2 px-4 py-3 text-lg bg-[#ffffff]" style={{boxShadow: "3px 3px 8px 2px #00000030"}}>
-            <h3>Email:</h3>
-            <p>0ivanovskibojan@gmail.com</p>
-        </div>
-        <div className="px-4 py-3 text-lg bg-[#ffffff]" style={{boxShadow: "3px 3px 8px 2px #00000030"}}>
-            <h3>Check out my CV</h3>
-            <button className="group relative w-full text-left">
-        <span className="absolute right-full transition-all opacity-0 group-hover:opacity-100 duration-300 group-hover:right-4 material-symbols-outlined">arrow_forward</span>
-            Download</button>
-        </div>
-        <div className="px-4 py-3 text-lg bg-[#ffffff] flex gap-5" style={{boxShadow: "3px 3px 8px 2px #00000030"}}>
-            <a className="hover:opacity-50 transition-opacity duration-300" target="_blank" href="https://github.com/Bojan-Ivanovski"><img src={github} alt="" width={32}/></a>
-            <a className="hover:opacity-50 transition-opacity duration-300" target="_blank" href="https://www.linkedin.com/in/bojan-ivanovski-aa9a34271"><img src={linkedin} alt="" width={32}/></a>
-        </div>
-    </div>
-}
-
-
-function MobileContact()
-{
-    const [Count, setCount] = useState(0);
-    const page = [<Form></Form>,<Info></Info>]
-    const change = (events) => {setCount(events.target.value)}
-    return (
-        <div className="md:hidden w-full px-8">
-            <select onChange={change} className="text-2xl px-4 py-3 mb-4 w-full" style={{boxShadow: "3px 3px 8px 2px #00000030"}}>
-                <option value={0}>Reach me from this website</option>
-                <option value={1}>Reach me personally</option>
-            </select>
-            {page[Count]}
-        </div>
-    )
-}
-
-export default function Contact(props)
-{
-    return(
-        <>
-        <Background Background="Background1"></Background>
-        <h1 className="absolute bottom-0 left-3 text-[40px] text-body" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-out-back">CONTACT</h1>
-        <div className="h-full grid xl:grid-cols-2 container mx-auto justify-center items-center px-8">
-            <div className={`grid max-md:hidden md:grid-cols-2 items-start gap-10`}>
-          
-                <Form></Form>
-                <Info></Info>
+export default function Contact() {
+  return (
+    <section id="contact" className="section contact-section">
+      <Background />
+      <div className="container">
+        <p className="eyebrow">04 — Get in touch</p>
+        <div className="contact-grid">
+          <div>
+            <h2>
+              Have an idea?
+              <br />
+              <span className="muted-heading">Let’s talk.</span>
+            </h2>
+            <p className="lead">
+              A project, a question, or just a hello.
+              <br />
+              I’d love to hear from you.
+            </p>
+            <a className="email-link" href="mailto:0ivanovskibojan@gmail.com">
+              0ivanovskibojan@gmail.com <ArrowUpRight size={20} />
+            </a>
+            <div className="contact-socials">
+              <a
+                href="https://github.com/Bojan-Ivanovski"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github size={18} /> GitHub <ArrowUpRight size={15} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/bojan-ivanovski-aa9a34271"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin size={18} /> LinkedIn <ArrowUpRight size={15} />
+              </a>
             </div>
-            <MobileContact></MobileContact>
+            <p className="contact-caption">
+              <Mail size={15} /> Prefer email? Reach out directly.
+            </p>
+          </div>
+          <form
+            className="contact-form"
+            action="https://formspree.io/f/xrgwznlp"
+            method="POST"
+          >
+            <div className="form-row">
+              <label>
+                Your name
+                <input
+                  name="name"
+                  autoComplete="name"
+                  placeholder="Name and surname"
+                  required
+                  maxLength={120}
+                />
+              </label>
+              <label>
+                Email address
+                <input
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  placeholder="you@example.com"
+                  required
+                  maxLength={254}
+                />
+              </label>
+            </div>
+            <label>
+              Subject
+              <input
+                name="subject"
+                placeholder="What’s on your mind?"
+                required
+                maxLength={200}
+              />
+            </label>
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows={5}
+                placeholder="Tell me a little about it…"
+                required
+                maxLength={10000}
+              />
+            </label>
+            <div className="form-bottom">
+              <span>Delivered via Formspree.</span>
+              <button className="button primary" type="submit">
+                Send message <Send size={16} />
+              </button>
+            </div>
+          </form>
         </div>
-        </>
-    )
+      </div>
+    </section>
+  );
 }

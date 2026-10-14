@@ -1,23 +1,67 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Code2, Cpu, Database, Wrench } from "lucide-react";
 import Background from "./Backgrounds/Background";
 
-export default function About({onThis})
-{
-    const url = window.location.href;
-    return(
-        <>
-        <Background Background="Background1"></Background>
-        <div className="w-full h-full grid md:grid-cols-2 items-center container mx-auto ">
-            <div className="flex flex-col gap-4 px-4 items-start" data-aos="zoom-in-right" data-aos-duration="2000" data-aos-easing="ease-out-back">
-                <h1 className="text-4xl mb-2">Hello, I'm Bojan Ivanovski</h1>
-                <p className="text-2xl">I'm a versatile developer with a passion for technology and a deep understanding of computers. As a Computer Engineering major, I have acquired a diverse skill set that allows me to excel in various aspects of software development and IT.</p>
-                <a className="flex items-center group justify-center gap-4 relative px-8 hover:pr-12 py-2 hover:boder-secondary hover:bg-primary/20 transition-all duration-300 border border-body bg-secondary/10" href={url+"#/MoreAboutMe"} onClick={() => window.scrollTo(0,0)}>
-                    Show me more
-                    <span className="absolute right-full transition-all opacity-0 group-hover:opacity-100 duration-300 group-hover:right-4 material-symbols-outlined">arrow_forward</span>
-                </a>
-            </div>
+const skills = [
+  {
+    icon: Code2,
+    title: "Web & applications",
+    text: "Interfaces and services, from the browser to the backend.",
+  },
+  {
+    icon: Database,
+    title: "Data & intelligent systems",
+    text: "Research, model evaluation, and tools for working with data.",
+  },
+  {
+    icon: Cpu,
+    title: "Engineering & electronics",
+    text: "A curiosity for robotics, hardware, and how systems fit together.",
+  },
+  {
+    icon: Wrench,
+    title: "IT & infrastructure",
+    text: "Practical experience with support, networks, and databases.",
+  },
+];
+export default function AboutMe() {
+  return (
+    <section id="about" className="section about-section">
+      <Background />
+      <div className="container">
+        <p className="eyebrow">02 — About me</p>
+        <div className="about-grid">
+          <div>
+            <h2>
+              A curious mind.
+              <br />
+              <span className="muted-heading">A practical approach.</span>
+            </h2>
+            <p className="lead">
+              Hello, I’m Bojan. I enjoy understanding how things work—and
+              building things that make a difference.
+            </p>
+            <p>
+              My background in computer engineering brings together software
+              development, IT, and a lasting interest in electronics. I work
+              across frontend and backend systems, with projects that explore
+              everything from web applications to machine learning.
+            </p>
+            <Link className="text-link" to="/MoreAboutMe">
+              A little more about me <ArrowUpRight size={18} />
+            </Link>
+          </div>
+          <div className="skills-grid">
+            {skills.map(({ icon: Icon, title, text }) => (
+              <article className="skill-card" key={title}>
+                <Icon size={24} strokeWidth={1.5} />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <h1 className="absolute bottom-0 left-3 text-[40px] text-body" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-out-back">ABOUT ME</h1>
-        </>
-    )
+      </div>
+    </section>
+  );
 }
