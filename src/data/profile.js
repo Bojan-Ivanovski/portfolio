@@ -190,10 +190,6 @@ export const skillGroups = [
     ],
   },
   {
-    title: "Architecture & engineering",
-    skills: ["Design patterns", "System design", "Event-driven architecture"],
-  },
-  {
     title: "Hardware & desktop",
     skills: ["C++", "Arduino", ".NET", "WinForms", "Robotics"],
   },
