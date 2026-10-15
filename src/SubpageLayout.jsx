@@ -182,7 +182,9 @@ export default function SubpageLayout() {
                 <p className="education-period">{entry.period}</p>
                 <div>
                   <h3>{entry.qualification}</h3>
-                  <p className="education-institution">{entry.institution}</p>
+                  {entry.institution && (
+                    <p className="education-institution">{entry.institution}</p>
+                  )}
                   <p>{entry.detail}</p>
                 </div>
               </article>

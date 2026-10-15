@@ -197,9 +197,14 @@ export const skillGroups = [
 
 export const education = [
   {
+    qualification: "Bioinformatics",
+    period: "Expected graduation · 2029",
+    detail: "Master’s degree program · Bioinformatics track.",
+  },
+  {
     qualification: "Computer Science & Computer Engineering",
     institution: "Faculty of Computer Science and Engineering, Skopje",
-    period: "Expected graduation · 2026",
+    period: "2022–2027",
     detail: "Bachelor’s degree program · Computer Engineering track.",
   },
   {
