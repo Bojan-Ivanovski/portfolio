@@ -198,6 +198,7 @@ export const skillGroups = [
 export const education = [
   {
     qualification: "Bioinformatics",
+    institution: "Faculty of Computer Science and Engineering, Skopje",
     period: "Expected graduation · 2029",
     detail: "Master’s degree program · Bioinformatics track.",
   },
